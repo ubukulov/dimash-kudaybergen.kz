@@ -23,8 +23,8 @@ class BaseController extends Controller
         $this->seo()->opengraph()->addProperty('locale', 'ru_RU');
         $this->seo()->metatags()->setKeywords('димаш, димаш кудайберген, кудайберген, dimash, kudaibergen');
         $this->seo()->opengraph()->setSiteName('Сайт про Димаша Кудайбергена');
-		$popular_posts = Post::orderBy('views', 'DESC')->limit(5)->get();
-		$popular_articles = Article::orderBy('views', 'DESC')->limit(5)->get();
+		$popular_posts = Post::orderBy('views', 'DESC')->limit(10)->get();
+		$popular_articles = Article::orderBy('views', 'DESC')->limit(10)->get();
         View::share('agent', $this->agent);
         View::share('popular_posts', $popular_posts);
         View::share('popular_articles', $popular_articles);
