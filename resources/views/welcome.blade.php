@@ -14,5 +14,4 @@
         <a class="more" href="{{ $post->url() }}">Подробнее</a>
     </div>
     @endforeach
-    {{ $posts->links() }}
 @stop

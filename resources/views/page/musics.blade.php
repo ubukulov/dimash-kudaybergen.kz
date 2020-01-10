@@ -2,7 +2,7 @@
 @section('content')
     {!! Breadcrumbs::render('page.show', null, 'Музыки') !!}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mb-4">
             <div class="page_content">
                 <div class="page_title">
                     <h1>Песни</h1>

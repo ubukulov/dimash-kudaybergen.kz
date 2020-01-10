@@ -16,7 +16,7 @@
         </div>
 		@endforeach
 
-        <div class="col-md-12">
+        <div class="col-md-12 mb-2">
             <script type="text/javascript">(function() {
                     if (window.pluso)if (typeof window.pluso.start == "function") return;
                     if (window.ifpluso==undefined) { window.ifpluso = 1;
@@ -29,7 +29,7 @@
             <div class="pluso" data-background="transparent" data-options="medium,round,line,horizontal,counter,theme=04" data-services="vkontakte,facebook,odnoklassniki,twitter,google,moimir"></div>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 mb-2">
             <comment type="singer" :pcp-id="{{ $singer->id }}"></comment>
             @php
                 $comments = $singer->comments();
