@@ -1,3 +1,5 @@
+php_value error_log /home/a0036865/domains/dimash-kudaybergen.kz/php_errors.log
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
