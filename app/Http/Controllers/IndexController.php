@@ -11,7 +11,7 @@ class IndexController extends BaseController
     {
 //        $this->seo()->setTitle('Главная');
         $this->seo()->addImages(url('/img/album-art/kajrat_nurtas.jpg'));
-        $posts = Post::orderBy('id', 'DESC')->get();
+        $posts = Post::orderBy('id', 'DESC')->paginate(10);
         return view('welcome', compact('posts'));
     }
 }
