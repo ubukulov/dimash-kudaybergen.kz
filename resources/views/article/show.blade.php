@@ -7,9 +7,6 @@
                 <div class="post_title">
                     <h1>{{ $article->title }}</h1>
                 </div>
-                <div class="post_im">
-                    <img src="{{ $article->getImage() }}" alt="">
-                </div>
 
                 <div class="post_desc">
                     {!! $article->full_description !!}
