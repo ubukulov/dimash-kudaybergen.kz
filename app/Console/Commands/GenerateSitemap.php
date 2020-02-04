@@ -7,6 +7,7 @@ use App\Post;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
+use App\Article;
 
 class GenerateSitemap extends Command
 {
@@ -43,8 +44,16 @@ class GenerateSitemap extends Command
     {
         $posts = Post::all();
         $clips = Clip::all();
-        $sitemap = Sitemap::create('https://qairat-nurtas.kz');
-        $sitemap->add('https://qairat-nurtas.kz');
+        $articles = Article::all();
+        $sitemap = Sitemap::create('https://dimash-kudaybergen.kz/');
+
+        $sitemap->add('https://dimash-kudaybergen.kz/');
+        $sitemap->add('https://dimash-kudaybergen.kz/page/concerts');
+        $sitemap->add('https://dimash-kudaybergen.kz/singer');
+        $sitemap->add('https://dimash-kudaybergen.kz/page/klipy');
+        $sitemap->add('https://dimash-kudaybergen.kz/page/musics');
+        $sitemap->add('https://dimash-kudaybergen.kz/articles');
+        $sitemap->add('https://dimash-kudaybergen.kz/page/biografiya');
 
         foreach($posts as $post) {
             $sitemap->add($post->url());
@@ -53,9 +62,10 @@ class GenerateSitemap extends Command
         foreach($clips as $clip) {
             $sitemap->add($clip->url());
         }
-        $sitemap->add(url('page/biografiya-kayrata-nurtasa'));
-        $sitemap->add(url('page/kajrat-nurtas-klipy'));
-        $sitemap->add(url('page/qairat-nurtas-musics'));
+
+        foreach($articles as $article) {
+            $sitemap->add($article->url());
+        }
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
