@@ -115,7 +115,7 @@ nav.main-numbering {
 @media (max-width: 992px) {
   .telo .mini h1 {
     font-size: 35px;
-    line-height: 20px;
+    line-height: 28px;
   }
 }
 .telo .mini a.more {
@@ -205,6 +205,7 @@ iframe {
 .news_tt {
   width: 75%;
   float: left;
+  padding-left: 10px;
 }
 .clear {
   clear: both;
