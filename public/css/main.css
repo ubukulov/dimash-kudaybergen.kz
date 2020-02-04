@@ -206,3 +206,6 @@ iframe {
   width: 75%;
   float: left;
 }
+.clear {
+  clear: both;
+}

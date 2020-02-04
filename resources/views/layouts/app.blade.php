@@ -108,6 +108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="news_tt">
                                 <a href="{{ $item->url() }}"><span>{{ $item->title }}</span></a>
                             </div>
+                            <div class="clear"></div>
                         </div>
                         @endforeach
                     </div>
