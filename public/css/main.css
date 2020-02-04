@@ -198,3 +198,11 @@ iframe {
   background-color: #4B175D;
   border-color: #4B175D;
 }
+.news_im {
+  width: 25%;
+  float: left;
+}
+.news_tt {
+  width: 75%;
+  float: left;
+}

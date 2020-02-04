@@ -101,12 +101,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             @endforeach
                         </ul> --}}
                         @foreach($popular_posts as $item)
-                        <div class="news_bl">
+                        <div class="news_bl mb-4">
                             <div class="news_im">
                                 <a href="{{ $item->url() }}"><img src="{{ $item->getImage() }}" alt=""></a>
                             </div>
                             <div class="news_tt">
-                                <a href="{{ $item->url() }}">{{ $item->title }}</a>
+                                <a href="{{ $item->url() }}"><span>{{ $item->title }}</span></a>
                             </div>
                         </div>
                         @endforeach
