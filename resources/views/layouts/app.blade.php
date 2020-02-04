@@ -72,8 +72,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a class="nav-link" href="{{ route('page.show', ['alias' => 'concerts']) }}">Концерты</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Введите слово" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" action="{{ route('search') }}" method="POST">
+                @csrf
+                <input class="form-control mr-sm-2" type="search" placeholder="Введите слово" aria-label="Search" name="query" required>
                 <button class="btn btn-outline-success my-2 my-sm-0 poisk-knop" type="submit">Поиск</button>
             </form>
         </div>

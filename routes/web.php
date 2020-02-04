@@ -23,3 +23,6 @@ Route::get('/page/{alias}', 'PageController@show')->name('page.show');
 # Comments
 Route::post('/comment/create', 'CommentController@create');
 Route::post('/comments', 'CommentController@index');
+
+# Search
+Route::post('/search', 'SearchController@search')->name('search');
