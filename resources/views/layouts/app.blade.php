@@ -95,11 +95,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="col-md-3 said">
                     <div class="news">
                         <h3>Популярные новости</h3>
-                        <ul>
+                        {{-- <ul>
                             @foreach($popular_posts as $item)
                                 <li><a href="{{ $item->url() }}">{{ $item->title }}</a></li>
                             @endforeach
-                        </ul>
+                        </ul> --}}
+                        @foreach($popular_posts as $item)
+                        <div class="news_bl">
+                            <div class="news_im">
+                                <a href="{{ $item->url() }}"><img src="{{ $item->getImage() }}" alt=""></a>
+                            </div>
+                            <div class="news_tt">
+                                <a href="{{ $item->url() }}">{{ $item->title }}</a>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                     <div class="article">
                         <h3>Популярные статьи</h3>
