@@ -62,6 +62,12 @@ Breadcrumbs::register('page.show', function ($breadcrumbs, $page = null, $b_titl
     }
 });
 
+// Search
+Breadcrumbs::register('search', function($breadcrumbs) {
+    $breadcrumbs->parent('homepage');
+    $breadcrumbs->push('Результаты поиска');
+});
+
 //// Login form
 //Breadcrumbs::register('login', function($breadcrumbs) {
 //    $breadcrumbs->parent('homepage');
