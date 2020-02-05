@@ -46,6 +46,11 @@ class Post extends Model
         return route('post.show', ['alias' => $this->alias, 'id' => $this->id]);
     }
 
+    public function author_url()
+    {
+        return route('show.author.post', ['alias' => $this->alias, 'id' => $this->id]);
+    }
+
     public function user()
     {
         return $this->hasOne('App\User', 'id', 'user_id');

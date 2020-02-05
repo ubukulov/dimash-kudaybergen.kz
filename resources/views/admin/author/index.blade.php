@@ -16,7 +16,7 @@
                     <tr>
                         <td>{{ $post->id }}</td>
                         <td>{{ $post->user->name }}</td>
-                        <td><a href="{{ $post->url() }}" target="_blank">{{ $post->title }}</a></td>
+                        <td><a href="{{ $post->author_url() }}" target="_blank">{{ $post->title }}</a></td>
                         <td>
                             @if($post->active == '0')
                                 Не активно

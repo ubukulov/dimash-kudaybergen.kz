@@ -68,10 +68,17 @@ Breadcrumbs::register('search', function($breadcrumbs) {
     $breadcrumbs->push('Результаты поиска');
 });
 
-// news author
+// author posts
 Breadcrumbs::register('author.post', function($breadcrumbs) {
     $breadcrumbs->parent('homepage');
-    $breadcrumbs->push('Автор посты');
+    $breadcrumbs->push('Авторские посты');
+});
+
+// show author post
+Breadcrumbs::register('author.post.show', function($breadcrumbs, $post) {
+    $breadcrumbs->parent('homepage');
+    $breadcrumbs->push('Авторские посты', route('author.posts'));
+    $breadcrumbs->push($post->title);
 });
 
 //// Login form

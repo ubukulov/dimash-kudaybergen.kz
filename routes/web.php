@@ -25,6 +25,7 @@ Route::get('/logout', function(){
 });
 Route::get('/create-author-post', 'AuthorController@create')->name('create.author.post');
 Route::post('/store-author-post', 'AuthorController@store')->name('store.author.post');
+Route::get('/author-post/{alias}/{id}', 'AuthorController@show')->name('show.author.post');
 
 # Comments
 Route::post('/comment/create', 'CommentController@create');

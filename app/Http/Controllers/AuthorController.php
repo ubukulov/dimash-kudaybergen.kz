@@ -46,4 +46,20 @@ class AuthorController extends BaseController
 
         return redirect()->route('author.posts');
     }
+
+    public function show($alias, $id)
+    {
+        $post = Post::findOrFail($id);
+        $post->views++;
+        $post->save();
+        $this->seo()->metatags()->setKeywords($post->keywords);
+        $this->seo()->setDescription(str_replace("&nbsp;",' ',strip_tags($post->description)));
+        $this->seo()->addImages($post->getImage());
+        $this->seo()->setTitle($post->title);
+        $this->seo()->opengraph()->setType('article');
+        $this->seo()->opengraph()->setUrl($post->author_url());
+        $this->seo()->opengraph()->addProperty('image:size', 300);
+        $this->seo()->setCanonical($post->author_url());
+        return view('show_author_post', compact('post'));
+    }
 }
