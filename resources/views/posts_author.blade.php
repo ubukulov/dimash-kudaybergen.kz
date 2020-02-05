@@ -1,7 +1,13 @@
 @extends('layouts.app')
 @section('content')
     {!! Breadcrumbs::render('author.post') !!}
-    <a @if(Auth::check()) href="" @else href="#" data-toggle="modal" data-target="#auth_form" @endif class="btn btn-success">Написать пост</a>
+
+    @if(Auth::check())
+        <a href="#" class="btn btn-success">Написать пост</a>
+    @else
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#auth_form">Написать пост</button>
+    @endif
+
     @foreach($posts as $post)
     <div class="mini">
         <a href="{{ $post->url() }}">

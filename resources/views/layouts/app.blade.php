@@ -97,7 +97,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="col-md-3 said">
                     <div class="news">
-                        <h3>Популярные новости</h3>
+                        <h3 class="mb-4">Популярные новости</h3>
                         {{-- <ul>
                             @foreach($popular_posts as $item)
                                 <li><a href="{{ $item->url() }}">{{ $item->title }}</a></li>
