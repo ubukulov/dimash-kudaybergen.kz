@@ -29,12 +29,12 @@
 
                         <div class="form-group">
                             <label>Короткое описание</label>
-                            <textarea name="description" cols="30" rows="5" class="form-control" required></textarea>
+                            <textarea name="description" id="short_desc" cols="30" rows="5" class="form-control" required></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Полное описание</label>
-                            <textarea name="full_description" id="editor1" class="form-control" cols="30" rows="5" required></textarea>
+                            <textarea name="full_description" id="full_desc" class="form-control" cols="30" rows="5" required></textarea>
                         </div>
 
                         <div class="form-group">
@@ -54,26 +54,14 @@
     </div>
 
     @push('scripts')
-        <!-- Bootstrap WYSIHTML5 -->
-        <script src="/admin_lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-        <!-- Slimscroll -->
-        <script src="/admin_lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-        <!-- FastClick -->
-        <script src="/admin_lte/bower_components/fastclick/lib/fastclick.js"></script>
-        <!-- AdminLTE App -->
-        <script src="/admin_lte/dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="/admin_lte/dist/js/pages/dashboard.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="/admin_lte/dist/js/demo.js"></script>
         <!-- CK Editor -->
         <script src="/admin_lte/bower_components/ckeditor/ckeditor.js"></script>
         <script>
             $(function () {
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-                CKEDITOR.replace('description');
-                CKEDITOR.replace('full_description');
+                CKEDITOR.replace('short_desc');
+                CKEDITOR.replace('full_desc');
                 CKEDITOR.config.allowedContent = true;
             })
         </script>
