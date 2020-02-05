@@ -23,7 +23,7 @@
     </div>
     @endforeach
 
-    <!-- Modal -->
+    <!-- Auth Modal -->
     <div class="modal fade" id="auth_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -50,9 +50,46 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a href="#">Регистрация</a>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#reg_form">Регистрация</button>
                 </div>
             </div>
         </div>
-  </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="reg_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Форма регистрации</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('registration') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" name="name" required placeholder="Ваше имя" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" name="email" required placeholder="Ваш Email" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="password" required placeholder="Ваш пароль" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#auth_form">Уже зарегистрированы?</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @stop

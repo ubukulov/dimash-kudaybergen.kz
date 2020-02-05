@@ -23,6 +23,7 @@ Route::get('/logout', function(){
     Auth::logout();
     return redirect()->route('home');
 });
+Route::get('/create-author-post', 'AuthorController@create')->name('create.author.post');
 
 # Comments
 Route::post('/comment/create', 'CommentController@create');
@@ -33,3 +34,4 @@ Route::post('/search', 'SearchController@search')->name('search');
 
 # Авторизация
 Route::post('/authenticate', 'AuthController@authenticate')->name('authenticate');
+Route::post('/registration', 'AuthController@registration')->name('registration');

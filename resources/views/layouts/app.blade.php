@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{{ asset('css/play.css') }}">
     <!-- Include Style Sheet -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"/>
+
+    @stack('styles')
+
     {!! SEO::generate() !!}
     <!-- Include Amplitude JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.0.2/dist/amplitude.js"></script>
@@ -172,5 +175,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/functions.js') }}"></script>
+@stack('scripts')
 </body>
 </html>
