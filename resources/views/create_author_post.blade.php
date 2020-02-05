@@ -50,7 +50,6 @@
             $(function () {
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
-                CKEDITOR.replace('short_desc');
                 CKEDITOR.replace('full_desc');
                 CKEDITOR.config.allowedContent = true;
             })
