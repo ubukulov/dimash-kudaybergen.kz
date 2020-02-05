@@ -20,6 +20,7 @@ class AuthorController extends BaseController
     {
         $data = $request->except('file');
         $data['user_id'] = Auth::user()->id;
+        $data['active'] = 0;
         $post = Post::create($data);
 
         if ($request->hasFile('file')) {

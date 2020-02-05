@@ -56,7 +56,7 @@ class PageController extends BaseController
 
     public function author_posts()
     {
-        $posts = Post::orderBy('id', 'DESC')->whereNotNull('user_id')->paginate(10);
+        $posts = Post::orderBy('id', 'DESC')->where(['active' => 1])->whereNotNull('user_id')->paginate(10);
         return view('posts_author', compact('posts'));
     }
 }
