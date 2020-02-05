@@ -53,4 +53,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['web
     Route::get('/comments', 'CommentController@index')->name('admin.comment.index');
     Route::get('/comment/{id}/active', 'CommentController@active')->name('admin.comment.active');
     Route::get('/comment/{id}/noactive', 'CommentController@noActive')->name('admin.comment.noactive');
+
+    # Авторские посты
+    Route::get('/author-posts', 'AuthorController@index')->name('admin.author.index');
+    Route::get('/author-posts/{id}/active', 'AuthorController@active')->name('admin.author.active');
+    Route::get('/author-posts/{id}/noactive', 'AuthorController@noActive')->name('admin.author.noactive');
+    Route::get('/author/{id}/show', 'AuthorController@show')->name('admin.author.show');
 });
