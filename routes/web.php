@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Auth;
 
 Route::get('/', 'IndexController@welcome')->name('home');
 Route::get('/post/{alias}/{id}', 'PostController@show')->name('post.show');
@@ -20,6 +21,10 @@ Route::get('/singer/{alias}/{id}', 'SingerController@show')->name('singer.show')
 Route::get('/clip/{alias}/{id}', 'ClipController@show')->name('clip.show');
 Route::get('/page/{alias}', 'PageController@show')->name('page.show');
 Route::get('/author-posts', 'PageController@author_posts')->name('author.posts');
+Route::get('/logout', function(){
+    Auth::logout();
+    return redirect()->route('home');
+});
 
 # Comments
 Route::post('/comment/create', 'CommentController@create');
