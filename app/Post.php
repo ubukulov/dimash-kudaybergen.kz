@@ -48,7 +48,7 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User', 'id', 'user_id');
+        return $this->hasOne('App\User', 'id', 'user_id');
     }
 
     public function comments()
