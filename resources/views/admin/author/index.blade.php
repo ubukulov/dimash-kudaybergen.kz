@@ -15,7 +15,7 @@
                 @foreach($posts as $post)
                     <tr>
                         <td>{{ $post->id }}</td>
-                        <td>{{ $post->name }}</td>
+                        <td>{{ $post->user->name }}</td>
                         <td><a href="{{ route('admin.author.show', ['id' => $post->id]) }}" target="_blank">{{ $post->title }}</a></td>
                         <td>
                             @if($post->active == '0')

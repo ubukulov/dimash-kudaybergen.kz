@@ -46,6 +46,11 @@ class Post extends Model
         return route('post.show', ['alias' => $this->alias, 'id' => $this->id]);
     }
 
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'id', 'user_id');
+    }
+
     public function comments()
     {
         $comments = Comment::where(['comments.type' => 'post', 'comments.pcp_id' => $this->id, 'comments.status' => '1'])

@@ -10,10 +10,7 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('post.id', 'DESC')
-                ->select('users.*', 'posts.*')
-                ->join('users', 'users.id', '=', 'posts.user_id')
-                ->get();
+        $posts = Post::orderBy('post.id', 'DESC')->whereNotNull('user_id')->get();
         return view('admin.author.index', compact('posts'));
     }
 
