@@ -11,7 +11,11 @@ class AuthController extends Controller
     public function authenticate(Request $request)
     {
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-            return redirect()->back();
+            if ($request->has('route')) {
+                return redirect()->route($request->input('route'));
+            } else {
+                return redirect()->back();
+            }
         } else {
             return redirect()->route('home');
         }
@@ -22,7 +26,11 @@ class AuthController extends Controller
         if (User::exists($request->input('email'))) {
             // попробуем авторизаваться
             if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-                return redirect()->back();
+                if ($request->has('route')) {
+                    return redirect()->route($request->input('route'));
+                } else {
+                    return redirect()->back();
+                }
             } else {
                 return redirect()->route('home');
             }
@@ -32,7 +40,11 @@ class AuthController extends Controller
             $data['password'] = bcrypt($data['password']);
             $user = User::create($data);
             Auth::login($user);
-            return redirect()->route('author.posts');
+            if ($request->has('route')) {
+                return redirect()->route($request->input('route'));
+            } else {
+                return redirect()->route('author.posts');
+            }
         }
     }
 }

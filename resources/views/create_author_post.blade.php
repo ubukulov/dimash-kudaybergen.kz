@@ -18,18 +18,8 @@
                     @csrf
                     <div class="box-body">
                         <div class="form-group">
-                            <label>Наименование</label>
+                            <label>Заголовок</label>
                             <input type="text" name="title" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Ключевые слова</label>
-                            <input type="text" name="keywords" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Короткое описание</label>
-                            <textarea name="description" id="short_desc" cols="30" rows="5" class="form-control" required></textarea>
                         </div>
 
                         <div class="form-group">

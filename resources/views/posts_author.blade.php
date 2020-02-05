@@ -36,6 +36,7 @@
                 <div class="modal-body">
                     <form action="{{ route('authenticate') }}" method="POST">
                         @csrf
+                        <input type="hidden" name="route" value="create.author.post">
                         <div class="form-group">
                             <input type="email" name="email" required placeholder="Ваш Email" class="form-control">
                         </div>
@@ -69,6 +70,7 @@
                 <div class="modal-body">
                     <form action="{{ route('registration') }}" method="POST">
                         @csrf
+                        <input type="hidden" name="route" value="create.author.post">
                         <div class="form-group">
                             <input type="text" name="name" required placeholder="Ваше имя" class="form-control">
                         </div>
