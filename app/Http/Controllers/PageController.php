@@ -54,7 +54,7 @@ class PageController extends BaseController
         abort(404);
     }
 
-    public function news_author()
+    public function author_posts()
     {
         $posts = Post::orderBy('id', 'DESC')->whereNotNull('user_id')->paginate(10);
         return view('posts_author', compact('posts'));

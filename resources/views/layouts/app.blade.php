@@ -71,6 +71,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li class="nav-item {{ \Request::is('page/concerts*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('page.show', ['alias' => 'concerts']) }}">Концерты</a>
                 </li>
+                <li class="nav-item {{ \Request::is('author-posts*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('author.posts') }}">Автор посты</a>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" action="{{ route('search') }}" method="POST">
                 @csrf

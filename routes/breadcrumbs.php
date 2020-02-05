@@ -69,7 +69,7 @@ Breadcrumbs::register('search', function($breadcrumbs) {
 });
 
 // news author
-Breadcrumbs::register('news.author', function($breadcrumbs) {
+Breadcrumbs::register('author.post', function($breadcrumbs) {
     $breadcrumbs->parent('homepage');
     $breadcrumbs->push('Автор посты');
 });

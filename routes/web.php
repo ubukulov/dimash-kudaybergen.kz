@@ -19,7 +19,7 @@ Route::get('/singer', 'SingerController@index')->name('singer');
 Route::get('/singer/{alias}/{id}', 'SingerController@show')->name('singer.show');
 Route::get('/clip/{alias}/{id}', 'ClipController@show')->name('clip.show');
 Route::get('/page/{alias}', 'PageController@show')->name('page.show');
-Route::get('/news-author', 'PageController@news_author')->name('news.author');
+Route::get('/author-posts', 'PageController@author_posts')->name('author.posts');
 
 # Comments
 Route::post('/comment/create', 'CommentController@create');
