@@ -3,7 +3,7 @@
     {!! Breadcrumbs::render('author.post') !!}
 
     @if(Auth::check())
-        <a href="#" class="btn btn-success">Написать пост</a>
+        <a href="{{ route('create.author.post') }}" class="btn btn-success">Написать пост</a>
     @else
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#auth_form">Написать пост</button>
     @endif

@@ -14,7 +14,7 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" action="{{ route('create.author.post') }}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{ route('store.author.post') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="box-body">
                         <div class="form-group">

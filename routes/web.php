@@ -24,6 +24,7 @@ Route::get('/logout', function(){
     return redirect()->route('home');
 });
 Route::get('/create-author-post', 'AuthorController@create')->name('create.author.post');
+Route::post('/store-author-post', 'AuthorController@store')->name('store.author.post');
 
 # Comments
 Route::post('/comment/create', 'CommentController@create');

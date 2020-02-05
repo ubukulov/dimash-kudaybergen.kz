@@ -11,7 +11,12 @@ class AuthorController extends BaseController
     protected $imagePath = 'uploads/posts/';
     protected $imagePathThumbs = '/uploads/posts/thumbs/';
 
-    public function create(Request $request)
+    public function create()
+    {
+        return view('create_author_post');
+    }
+
+    public function store(Request $request)
     {
         $data = $request->except('file');
         $data['user_id'] = Auth::user()->id;
