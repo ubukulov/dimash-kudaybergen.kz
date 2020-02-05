@@ -10,7 +10,7 @@ class Post extends Model
     use Sluggable;
 
     protected $fillable = [
-        'title', 'alias', 'keywords', 'description', 'full_description', 'image', 'views', 'active'
+        'title', 'alias', 'keywords', 'description', 'full_description', 'image', 'views', 'active', 'user_id'
     ];
 
     protected $dates = [

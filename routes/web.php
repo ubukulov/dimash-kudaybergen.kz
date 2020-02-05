@@ -19,6 +19,7 @@ Route::get('/singer', 'SingerController@index')->name('singer');
 Route::get('/singer/{alias}/{id}', 'SingerController@show')->name('singer.show');
 Route::get('/clip/{alias}/{id}', 'ClipController@show')->name('clip.show');
 Route::get('/page/{alias}', 'PageController@show')->name('page.show');
+Route::get('/news-author', 'PageController@news_author')->name('news.author');
 
 # Comments
 Route::post('/comment/create', 'CommentController@create');
@@ -26,3 +27,6 @@ Route::post('/comments', 'CommentController@index');
 
 # Search
 Route::post('/search', 'SearchController@search')->name('search');
+
+# Авторизация
+Route::post('/authenticate', 'AuthController@authenticate')->name('authenticate');

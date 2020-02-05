@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Clip;
 use App\Page;
+use App\Post;
 use App\Concert;
 use Illuminate\Http\Request;
 
@@ -51,5 +52,11 @@ class PageController extends BaseController
         }
 
         abort(404);
+    }
+
+    public function news_author()
+    {
+        $posts = Post::orderBy('id', 'DESC')->whereNotNull('user_id')->paginate(10);
+        return view('posts_author', compact('posts'));
     }
 }

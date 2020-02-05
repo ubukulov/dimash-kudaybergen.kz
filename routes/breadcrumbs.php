@@ -68,6 +68,12 @@ Breadcrumbs::register('search', function($breadcrumbs) {
     $breadcrumbs->push('Результаты поиска');
 });
 
+// news author
+Breadcrumbs::register('news.author', function($breadcrumbs) {
+    $breadcrumbs->parent('homepage');
+    $breadcrumbs->push('Автор посты');
+});
+
 //// Login form
 //Breadcrumbs::register('login', function($breadcrumbs) {
 //    $breadcrumbs->parent('homepage');
