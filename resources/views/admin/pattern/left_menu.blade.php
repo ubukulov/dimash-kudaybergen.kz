@@ -48,7 +48,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('admin.comment.index') }}">
+        <a href="{{ route('admin.author.index') }}">
             <i class="fas fa-comments"></i>
             <span>Список авторских постов</span>
         </a>
