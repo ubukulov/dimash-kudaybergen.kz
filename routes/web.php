@@ -23,9 +23,11 @@ Route::get('/logout', function(){
     Auth::logout();
     return redirect()->route('home');
 });
-Route::get('/create-author-post', 'AuthorController@create')->name('create.author.post');
-Route::post('/store-author-post', 'AuthorController@store')->name('store.author.post');
-Route::get('/author-post/{alias}/{id}', 'AuthorController@show')->name('show.author.post');
+Route::group(['middleware' => ['web', 'auth']], function(){
+    Route::get('/create-author-post', 'AuthorController@create')->name('create.author.post');
+    Route::post('/store-author-post', 'AuthorController@store')->name('store.author.post');
+    Route::get('/author-post/{alias}/{id}', 'AuthorController@show')->name('show.author.post');
+});
 
 # Comments
 Route::post('/comment/create', 'CommentController@create');
