@@ -28,7 +28,9 @@ class AuthController extends Controller
             }
         } else {
             // новый пользователь
-            $user = User::create($request->all());
+            $data = $request->all();
+            $data['password'] = bcrypt($data['password']);
+            $user = User::create($data);
             Auth::login($user);
             return redirect()->route('author.posts');
         }
