@@ -122,8 +122,13 @@ class ArticleController extends Controller
             })->save($save_path_thumbs.$file_name);*/
 
             // удалит старую картинку
-            unlink($save_path.$article->image);
-            unlink($save_path_thumbs.$article->image);
+            if (file_exists($save_path.$article->image)) {
+                unlink($save_path.$article->image);
+            }
+
+            if (file_exists($save_path_thumbs.$article->image)) {
+                unlink($save_path_thumbs.$article->image);
+            }
 
             $article->image = $file_name;
             $article->save();

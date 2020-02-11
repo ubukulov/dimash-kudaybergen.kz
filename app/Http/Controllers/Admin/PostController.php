@@ -122,8 +122,13 @@ class PostController extends Controller
             })->save($save_path_thumbs.$file_name);*/
 
             // удалит старую картинку
-            //unlink($save_path.$post->image);
-            //unlink($save_path_thumbs.$post->image);
+            if (file_exists($save_path.$post->image)) {
+                unlink($save_path.$post->image);
+            }
+
+            if (file_exists($save_path_thumbs.$post->image)) {
+                unlink($save_path_thumbs.$post->image);
+            }
 
             $post->image = $file_name;
             $post->save();
