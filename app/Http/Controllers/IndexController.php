@@ -10,7 +10,7 @@ class IndexController extends BaseController
     public function welcome()
     {
 //        $this->seo()->setTitle('Главная');
-        $this->seo()->addImages(url('/img/album-art/kajrat_nurtas.jpg'));
+        $this->seo()->addImages(url('/img/album-art/dimash.jpg'));
         $posts = Post::orderBy('id', 'DESC')->whereNull('user_id')->paginate(10);
         return view('welcome', compact('posts'));
     }

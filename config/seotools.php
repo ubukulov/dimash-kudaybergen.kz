@@ -35,8 +35,8 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'       => 'Последние новости про Кайрата Нуртаса', // set false to total remove
-            'description' => 'Последние новости про Кайрата Нуртаса', // set false to total remove
+            'title'       => 'Последние новости про Димаша Кудайбергена', // set false to total remove
+            'description' => 'Последние новости про Димаша Кудайбергена', // set false to total remove
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => null,
             'site_name'   => null,
@@ -57,8 +57,8 @@ return [
          * The default configurations to be used by the json-ld generator.
          */
         'defaults' => [
-            'title'       => 'Последние новости про Кайрата Нуртаса', // set false to total remove
-            'description' => 'Последние новости про Кайрата Нуртаса', // set false to total remove
+            'title'       => 'Последние новости про Димаша Кудайбергена', // set false to total remove
+            'description' => 'Последние новости про Димаша Кудайбергена', // set false to total remove
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => [],
